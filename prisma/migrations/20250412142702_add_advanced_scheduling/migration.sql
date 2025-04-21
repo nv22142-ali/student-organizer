@@ -1,0 +1,7 @@
+-- AlterTable
+ALTER TABLE "Task" ADD COLUMN "category" TEXT DEFAULT 'Default';
+ALTER TABLE "Task" ADD COLUMN "estimatedMinutes" INTEGER;
+ALTER TABLE "Task" ADD COLUMN "recurrence" TEXT DEFAULT 'NONE';
+ALTER TABLE "Task" ADD COLUMN "recurrenceEnd" DATETIME;
+ALTER TABLE "Task" ADD COLUMN "reminderTime" DATETIME;
+ALTER TABLE "Task" ADD COLUMN "tags" TEXT;
