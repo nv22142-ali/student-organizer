@@ -28,6 +28,19 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.repository }}/student-organizer:latest
+          labels: |
+            org.opencontainers.image.source=https://github.com/nv22142-ali/student-organizer
+            org.opencontainers.image.licenses=MIT
+            org.opencontainers.image.title=student-organizer
+            org.opencontainers.image.description=Task Management App with Advanced Scheduling
+            org.opencontainers.image.url=https://github.com/nv22142-ali/student-organizer
+          provenance: true
+          build-args: |
+            NEXTAUTH_URL=${{ secrets.NEXTAUTH_URL }}
+            NEXTAUTH_SECRET=${{ secrets.NEXTAUTH_SECRET }}
+            GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}
+            GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}
+            OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
         env:
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
