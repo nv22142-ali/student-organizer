@@ -28,8 +28,6 @@ COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 
-# Copy .env file if present (for local dev; in production, use secrets management)
-COPY .env .env
 
 EXPOSE 3000
 
